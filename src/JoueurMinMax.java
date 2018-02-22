@@ -1,9 +1,11 @@
 
 public class JoueurMinMax implements Joueur {
 	private int m_depth;
+	private FonctionEvaluation m_funct;
 	
-	public JoueurMinMax(int depth){
+	public JoueurMinMax(int depth, FonctionEvaluation funct){
 		this.m_depth = depth;
+		this.m_funct = funct;
 	}
 
 	@Override
@@ -25,9 +27,8 @@ public class JoueurMinMax implements Joueur {
 	
 	private double minimax(Grille g, int depth, int joueur, boolean hisTurn){
 		double result = 0.0;
-		FonctionEvaluation funct = new FonctionEvaluationProf();
 		if((depth == 0) || g.estPleine())
-			result = funct.evaluation(g, joueur);
+			result = m_funct.evaluation(g, joueur);
 		else{
 			Grille tmp;
 			result = hisTurn ? FonctionEvaluation.MIN : FonctionEvaluation.MAX;

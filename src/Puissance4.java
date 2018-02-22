@@ -14,7 +14,8 @@ public class Puissance4 {
 
 	public static void main(String[] args) {
 		//cr�ation des joueurs et appel de la fonction jouer
-		Joueur joueur1 = new JoueurMinMax(5);
+		FonctionEvaluation funct = new FonctionEvaluationProf();
+		Joueur joueur1 = new JoueurAlphaBeta(5, funct);
 		Joueur joueur2 = new JoueurAleatoire();
 		
 		jouer(joueur1, joueur2);
