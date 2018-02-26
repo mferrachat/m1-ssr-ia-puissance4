@@ -10,7 +10,7 @@ public class JoueurAlphaBeta implements Joueur {
 
 	@Override
 	public Resultat coup(Grille grille, int joueur) {
-		int coup = 0;
+		int coup = grille.getCoupAleatoire(); //Permet de s'assurer de jouer dans une colonne valide si aucun coup n'est évalué à plus de MIN
 		double val = FonctionEvaluation.MIN, val_tmp = FonctionEvaluation.MIN;
 		Grille g_tmp;
 		for(int i : grille.generateurCoups()){

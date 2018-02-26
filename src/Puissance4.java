@@ -14,9 +14,10 @@ public class Puissance4 {
 
 	public static void main(String[] args) {
 		//cr�ation des joueurs et appel de la fonction jouer
-		FonctionEvaluation funct = new FonctionEvaluationProf();
-		Joueur joueur1 = new JoueurAlphaBeta(5, funct);
-		Joueur joueur2 = new JoueurAleatoire();
+		FonctionEvaluation funct1 = new FonctionEvaluationProf();
+		FonctionEvaluation funct2 = new FonctionEvaluationPerso();
+		Joueur joueur1 = new JoueurAlphaBeta(0, funct2);
+		Joueur joueur2 = new JoueurAlphaBeta(6, funct1);
 		
 		jouer(joueur1, joueur2);
 	}
